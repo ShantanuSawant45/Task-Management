@@ -41,7 +41,7 @@ def get_current_user(db:Session=Depends(get_db), token:str=Depends(OAuth2Passwor
     except JWTError:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,detail="Invalid authentication credentials")
     email=decoded_token.get("sub")  
-    check_email=db.query(User).filter(User.email==email).first()
-    if not check_email:
+    user_data=db.query(User).filter(User.email==email).first()
+    if not user_data:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED,detail="Invalid authentication credentials")
-    return check_email  
+    return user_data  

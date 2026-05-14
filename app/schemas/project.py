@@ -17,3 +17,7 @@ class ProjectResponse(BaseModel):
     created_at:datetime
     
     model_config = ConfigDict(from_attributes=True)
+    
+class ProjectUpdate(BaseModel):
+    title: str | None = None
+    description: str | None = None

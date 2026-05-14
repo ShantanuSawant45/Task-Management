@@ -2,7 +2,7 @@
 import os
 from app.models.users import User
 from app.schemas.user import UserCreate
-from fastapi import FastAPI,Depends,HTTPException,APIRouter
+from fastapi import Depends,HTTPException,APIRouter
 from app.database import get_db
 from sqlalchemy.orm import Session
 from app.core.security import hash_password,verify_password,generate_jwt_token
