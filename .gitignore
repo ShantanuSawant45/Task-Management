@@ -1,53 +1,58 @@
-```gitignore id="5w7a7m"
-# Python
+# ======================
+# Backend (Python)
+# ======================
+
 __pycache__/
 *.py[cod]
 *.pyo
 *.pyd
 
-# Virtual Environment
 .venv/
 venv/
 env/
 
-# Poetry
 poetry.lock
 
-# Environment Variables
 .env
 
-# VS Code
-.vscode/
-
-# PyCharm
-.idea/
-
-# Testing
 .pytest_cache/
 .coverage
 htmlcov/
 
-# Alembic
 alembic/versions/*.pyc
 
-# Logs
 *.log
 
-# OS Files
-.DS_Store
-Thumbs.db
-
-# Build Files
 build/
 dist/
 *.egg-info/
 
-# Mypy
 .mypy_cache/
-
-# Ruff
 .ruff_cache/
 
-# SQLite
 *.db
-```
+
+# ======================
+# Frontend (React/Vite)
+# ======================
+
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+
+frontend/.env
+frontend/.env.local
+
+frontend/.vite/
+
+frontend/*.log
+
+# ======================
+# Common
+# ======================
+
+.vscode/
+.idea/
+
+.DS_Store
+Thumbs.db
