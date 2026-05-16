@@ -5,13 +5,8 @@ from app.schemas.project import ProjectCreate, ProjectResponse, ProjectUpdate
 from app.core.security import get_current_user
 from app.models.projects import Project
 
-
-
 router=APIRouter()
-
-
-
-@router.post("/projects")
+@router.post("/projects/")
 def create_project(project_data:ProjectCreate,db:Session=Depends(get_db),current_user=Depends(get_current_user)):
 
     owner_id=current_user.id

@@ -43,9 +43,10 @@ def login(user: UserLogin, db: Session = Depends(get_db)):
     if not existing_user or not verify_password(user.password, existing_user.hashed_password):
         raise HTTPException(status_code=400, detail="Invalid email or password")
     
-    return generate_jwt_token(
+    token= generate_jwt_token(
         data={"sub": existing_user.email},
         secret_key=os.getenv("SECRET_KEY"),
         algorithm=os.getenv("ALGORITHM"),
         expires_delta=int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES"))
     )
+    return {"access_token": token, "token_type": "bearer"}
